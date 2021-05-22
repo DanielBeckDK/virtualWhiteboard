@@ -14,6 +14,10 @@ include_once('components/textPost.php');
 include_once('components/imagePost.php');
 include_once('login.php');
 
+if (isset($_SESSION['errorMess'])) {
+  $errorMessage = $_SESSION['errorMess'];
+}
+
 //check if user is logged in by looking for the session being set when user logs in
 if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
 
@@ -50,6 +54,7 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
 } else {
 
   //Or else get the login form and show that so that the user can login
+
   $content = getLoginForm();
 }
 

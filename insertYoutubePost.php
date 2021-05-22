@@ -5,7 +5,7 @@ if (!isset($_SESSION['loggedIn']) || !$_SESSION['loggedIn']) {
 
     header("Location: index.php");
 }
-
+unset($_SESSION['errorMess']);
 
 //See if the fields from the youtube post form has been posted
 if (isset($_POST['youtubeLink'])) {
@@ -39,7 +39,7 @@ if (isset($_POST['youtubeLink'])) {
         echo $stmt->error;
     } else {
 
-        $errorMessage = '<p class="errorMess">My silly friend, you forgot to fill out all the fields :D</p>';
+        $_SESSION['errorMess'] = '<p class="errorMess">My silly friend, you forgot to fill out all the fields :D</p>';
     }
 }
 

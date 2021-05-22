@@ -4,6 +4,7 @@ include_once('dbConnection.php');
 if (!isset($_SESSION['loggedIn']) || !$_SESSION['loggedIn']) {
     header("Location: index.php");
 }
+unset($_SESSION['errorMess']);
 
 
 //Check if image has been uploaded
@@ -47,15 +48,15 @@ if (isset($_FILES['imageFile'])) {
             // Or else provide the user with error messages so they know what went wrong
             else {
 
-                $errorMessage = '<p class="errorMess">Error... hmm maybe it was not an image you uploaded? :I</p>';
+                $_SESSION['errorMess'] = '<p class="errorMess">Error... hmm maybe it was not an image you uploaded? :I</p>';
             }
         } else {
 
-            $errorMessage = '<p class="errorMess">Uh, my bags are full, maybe try an image smaller than 10MB :I</p>';
+            $_SESSION['errorMess'] = '<p class="errorMess">Uh, my bags are full, maybe try an image smaller than 10MB :I</p>';
         }
     } else {
 
-        $errorMessage = '<p class="errorMess">My silly friend, you forgot to fill out all the fields :D</p>';
+        $_SESSION['errorMess'] = '<p class="errorMess">My silly friend, you forgot to fill out all the fields :D</p>';
     }
 }
 

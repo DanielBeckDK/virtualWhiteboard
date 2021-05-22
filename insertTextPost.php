@@ -5,7 +5,7 @@ if (!isset($_SESSION['loggedIn']) || !$_SESSION['loggedIn']) {
 
     header("Location: index.php");
 }
-
+unset($_SESSION['errorMess']);
 if (isset($_POST['textMessage'])) {
 
     //Check of the message field was filled out
@@ -29,7 +29,7 @@ if (isset($_POST['textMessage'])) {
 
     // Or else provide the user with error messages so they know what went wrong
     else {
-        $errorMessage = '<p class="errorMess">My silly friend, you forgot to fill out all the fields :D</p>';
+        $_SESSION['errorMess'] = '<p class="errorMess">My silly friend, you forgot to fill out all the fields :D</p>';
     }
 }
 
