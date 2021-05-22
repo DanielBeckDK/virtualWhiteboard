@@ -1,4 +1,8 @@
 <?php
+
+if (!isset($_SESSION['loggedIn']) && !$_SESSION['loggedIn']) {
+    header("Location: index.php");
+}
 session_start();
 include_once('dbConnection.php');
 
@@ -12,7 +16,12 @@ if (isset($_POST['youtubeLink'])) {
         $userId = $_SESSION['userId'];
         $teamId = $_SESSION['teamId'];
         $currentDate = time();
-        $youtubeLink = substr($_POST['youtubeLink'], -11);
+
+        //Wee just need to post the id of the video to the db. This will grab just the id from the link
+        $youtubeLink = substr($_POST['youtubeLink'], strpos($_POST['youtubeLink'], "=") + 1);
+        $youtubeLink = substr($youtubeLink, 0, strpos($youtubeLink, "="));
+
+
         $message = $_POST['youtubeMessage'];
         $false = 0;
         $True = 1;

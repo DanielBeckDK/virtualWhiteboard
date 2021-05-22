@@ -1,5 +1,9 @@
 <?php
 
+if (!isset($_SESSION['loggedIn']) && !$_SESSION['loggedIn']) {
+    header("Location: index.php");
+}
+
 session_start();
 include_once('dbConnection.php');
 
