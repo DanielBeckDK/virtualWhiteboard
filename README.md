@@ -9,7 +9,6 @@ I have focused on the creation of content on the whiteboard so there's no role m
 Project created with a XAMPP stack  
 1: Create db named virutal_whiteboard in phpmyadmin  
 2: Import db file found in repo into this new db  
-3: Start apache server and go to http://localhost:PORT/FOLDERNAME/index.php  
+3: Start apache server and go to http://localhost:PORT/FOLDERNAME/index.php where PORT is the port your apache server is running on and FOLDERNAME is the folder in where you have this project stored  
 4: Site should work  
-5: login credentials for users can be found in document userCreds.txt  
-
+5: login credentials for users can be found in document userCreds.txt
