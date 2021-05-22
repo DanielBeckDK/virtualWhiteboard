@@ -1,0 +1,314 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: #0d518d79;
+}
+
+.siteContainer {
+    box-shadow: 5px 10px 18px #0c35724d;
+    border-radius: 20px;
+    padding: 10px 20px 20px 20px;
+    max-width: 800px;
+    width: 70%;
+    margin: auto;
+    background-color: white;
+    height: 100%;
+    overflow: hidden;
+}
+
+.header {
+    height: 100px;
+    border-bottom: 1px solid #0d518d48;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 6fr 1fr;
+    max-width: 750px;
+    background-color: white;
+    align-items: center;
+}
+
+.infoContainer {
+    height: 40px;
+    margin: auto;
+}
+
+.infoContainer p {
+    display: inline-block;
+    margin: 5px 0px 0px 0px;
+}
+
+.name {
+    color: #FC9D6F;
+    font-size: 16;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.teamName {
+    color: #FC9D6F;
+    font-size: 16;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.btn {
+    background-color: #FC9D6F;
+    color: white;
+    text-decoration: none;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    font-size: 16px;
+    width: 75px;
+    text-align: center;
+    line-height: 36px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.nav {
+    display: grid;
+    justify-items: flex-end;
+    align-items: center;
+}
+
+.logoContainer img {
+    padding-top: 10px;
+    max-width: 150px;
+}
+
+.contentContainer {
+    width: 102%;
+    height: 100%;
+    padding-bottom: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+h1 {
+    color: white;
+    margin: 0px 0px 20px 0px;
+}
+
+p {
+    color: #333333;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+.form p {
+    color: white;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+.siteContainer .errorMess {
+    color: red;
+    font-size: 16;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.loginForm .btn {
+    background-color: #8CACC8;
+}
+
+input {
+    color: #8CACC8;
+    font-size: 16;
+    font-weight: 600;
+    outline: none;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 40px;
+    border-radius: 15px;
+    border: solid 2px #8CACC8;
+    padding: 10px;
+}
+
+input::placeholder {
+    color: #8CACC8;
+    font-size: 14;
+    font-weight: 400;
+}
+
+textarea::placeholder {
+    color: #8CACC8;
+    font-size: 14;
+    font-weight: 400;
+}
+
+.loginForm {
+    display: grid;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+    max-width: 350px;
+    width: 90%;
+    height: 350px;
+    padding: 30px;
+    background-color: #FC9D6F;
+    border-radius: 20px;
+    border: solid 2px #8CACC8;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.post {
+    background-color: #fc9e6f25;
+    border-radius: 20px;
+    border: solid 2px #8CACC8;
+    margin: auto;
+    margin-top: 30px;
+    padding: 15px;
+}
+
+.postHeader {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid #0d518d48;
+}
+
+.postText {
+    padding-top: 10px;
+    color: #333333;
+}
+
+.postDate {
+    justify-self: flex-end;
+}
+
+.postHeader p {
+    color: #FC9D6F;
+    font-size: 16;
+    font-weight: 600;
+    padding: 0px;
+    margin: 0px;
+}
+
+.postContent img {
+    max-width: 100%;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    color: #8CACC8;
+    font-size: 16;
+    font-weight: 600;
+    outline: none;
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 15px;
+    border: solid 2px #8CACC8;
+    padding: 15px;
+}
+
+.createPostContainer {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    width: 100%;
+    background-color: #FC9D6F;
+    border-radius: 20px;
+    border: solid 2px #8CACC8;
+    margin: auto;
+    margin-top: 20px;
+    padding: 30px;
+}
+
+.createPostButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: flex-end;
+    justify-items: center
+}
+
+.createPostTitles {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center
+}
+
+.createPostTitles p {
+    font-size: 16;
+    font-weight: 600;
+    padding: 0px;
+    margin: 0px;
+}
+
+.createPostTitles p:nth-child(1) {
+    color: #FF0000;
+}
+
+.createPostTitles p:nth-child(2) {
+    color: black;
+}
+
+.createPostTitles p:nth-child(3) {
+    color: #247e39;
+}
+
+.fa-youtube {
+    color: #FF0000;
+}
+
+.fa-align-justify {
+    color: black;
+}
+
+.fa-images {
+    color: #247e39;
+}
+
+.fab:hover, .fas:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.youtubePostForm .btn, .textPostForm .btn, .imagePostForm .btn {
+    background-color: #8CACC8;
+}
+
+.contentContainer::-webkit-scrollbar {
+    background-color: #fff;
+    width: 16px;
+}
+
+/* background of the scrollbar except button or resizer */
+
+.contentContainer::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+/* scrollbar itself */
+
+.contentContainer::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 4px solid #fff;
+}
+
+/* set button(top and bottom of the scrollbar) */
+
+.contentContainer::-webkit-scrollbar-button {
+    display: none;
+}
+
+.fileInput {
+    height: 45px;
+}
