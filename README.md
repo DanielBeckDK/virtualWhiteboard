@@ -14,3 +14,5 @@ Project created with a XAMPP stack
 5: login credentials for users can be found in document userCreds.txt
 
 The site can also be viewed live at https://danielbeck.dk
+
+note: The project requires PHP 8:0 due to use of the str_contains() function.

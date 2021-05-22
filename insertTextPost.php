@@ -2,10 +2,9 @@
 session_start();
 include_once('dbConnection.php');
 if (!isset($_SESSION['loggedIn']) || !$_SESSION['loggedIn']) {
+
     header("Location: index.php");
 }
-
-
 
 if (isset($_POST['textMessage'])) {
 
@@ -25,11 +24,11 @@ if (isset($_POST['textMessage'])) {
         $stmt->bind_param("iisiii", $currentDate, $userId, $message, $false, $false, $teamId);
         $stmt->execute();
         $stmt->insert_id;
+        echo $stmt->error;
     }
 
     // Or else provide the user with error messages so they know what went wrong
     else {
-
         $errorMessage = '<p class="errorMess">My silly friend, you forgot to fill out all the fields :D</p>';
     }
 }

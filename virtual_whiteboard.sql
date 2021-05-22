@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2021 at 11:03 AM
+-- Generation Time: May 22, 2021 at 11:44 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -34,7 +34,7 @@ CREATE TABLE `posts` (
   `post_text` varchar(200) NOT NULL,
   `is_image` tinyint(1) NOT NULL,
   `is_youtube` tinyint(1) NOT NULL,
-  `post_content` varchar(200) NOT NULL,
+  `post_content` varchar(200) DEFAULT NULL,
   `team_id` tinyint(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -129,7 +129,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` tinyint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `post_id` tinyint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `teams`

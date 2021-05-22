@@ -38,6 +38,7 @@ if (isset($_FILES['imageFile'])) {
                 $stmt->bind_param("iisiisi", $currentDate, $userId, $message, $true, $false, $imageName, $teamId);
                 $stmt->execute();
                 $stmt->insert_id;
+                echo $stmt->error;
 
                 //Move the uploaded image to the userImages folder
                 move_uploaded_file($_FILES["imageFile"]["tmp_name"], $imageFile);

@@ -2,6 +2,7 @@
 session_start();
 include_once('dbConnection.php');
 if (!isset($_SESSION['loggedIn']) || !$_SESSION['loggedIn']) {
+
     header("Location: index.php");
 }
 
@@ -19,8 +20,12 @@ if (isset($_POST['youtubeLink'])) {
 
         //Wee just need to post the id of the video to the db. This will grab just the id from the link
         $youtubeLink = substr($_POST['youtubeLink'], strpos($_POST['youtubeLink'], "=") + 1);
-        $youtubeLink = substr($youtubeLink, 0, strpos($youtubeLink, "="));
 
+
+        if (str_contains($youtubeLink, '=')) {
+
+            $youtubeLink = substr($youtubeLink, 0, strpos($youtubeLink, "="));
+        }
 
         $message = $_POST['youtubeMessage'];
         $false = 0;
@@ -31,6 +36,7 @@ if (isset($_POST['youtubeLink'])) {
         $stmt->bind_param("iisiisi", $currentDate, $userId, $message, $false, $True, $youtubeLink, $teamId);
         $stmt->execute();
         $stmt->insert_id;
+        echo $stmt->error;
     } else {
 
         $errorMessage = '<p class="errorMess">My silly friend, you forgot to fill out all the fields :D</p>';
