@@ -39,13 +39,12 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
     //check what kind of post it is and use the corresponding post component and populate it with data
     if ($post['isImage']) {
 
-      $content = $content . getImagePost($post['userName'], date('H:i d/m/Y ', $post['postDate']), $post['postText'], $post['postContent']);
+      $content = $content . getImagePost($post['userName'], date('H:i d/m/Y ', $post['postDate']), $post['postText'], $post['postContent'], $post['postId'], $post['userId']);
     } else if ($post['isYoutube']) {
 
-      $content = $content . getYoutubePost($post['userName'], date('H:i d/m/Y ', $post['postDate']), $post['postText'], $post['postContent']);
+      $content = $content . getYoutubePost($post['userName'], date('H:i d/m/Y ', $post['postDate']), $post['postText'], $post['postContent'], $post['postId'], $post['userId']);
     } else {
-
-      $content = $content . getTextPost($post['userName'], date('H:i d/m/Y ', $post['postDate']), $post['postText']);
+      $content = $content . getTextPost($post['userName'], date('H:i d/m/Y ', $post['postDate']), $post['postText'], $post['postId'], $post['userId']);
     }
   }
 } else {

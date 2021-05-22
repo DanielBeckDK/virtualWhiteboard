@@ -1,10 +1,10 @@
 <?php
-
-if (!isset($_SESSION['loggedIn']) && !$_SESSION['loggedIn']) {
-    header("Location: index.php");
-}
 session_start();
 include_once('dbConnection.php');
+if (!isset($_SESSION['loggedIn']) || !$_SESSION['loggedIn']) {
+    header("Location: index.php");
+}
+
 
 //See if the fields from the youtube post form has been posted
 if (isset($_POST['youtubeLink'])) {

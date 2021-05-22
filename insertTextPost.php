@@ -1,11 +1,11 @@
 <?php
-
-if (!isset($_SESSION['loggedIn']) && !$_SESSION['loggedIn']) {
+session_start();
+include_once('dbConnection.php');
+if (!isset($_SESSION['loggedIn']) || !$_SESSION['loggedIn']) {
     header("Location: index.php");
 }
 
-session_start();
-include_once('dbConnection.php');
+
 
 if (isset($_POST['textMessage'])) {
 

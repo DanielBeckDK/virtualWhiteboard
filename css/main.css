@@ -180,7 +180,7 @@ textarea::placeholder {
 
 .postHeader {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     border-bottom: 1px solid #0d518d48;
 }
 
@@ -189,8 +189,16 @@ textarea::placeholder {
     color: #333333;
 }
 
-.postDate {
+.deleteBtn {
+    color: #8CACC8;
+    font-size: 16;
+    font-weight: 600;
     justify-self: flex-end;
+    background-color: none;
+}
+
+.postDate {
+    justify-self: center;
 }
 
 .postHeader p {
